@@ -1,0 +1,15 @@
+{
+  "name": "NAAC Portal",
+  "version": "1.0.0",
+  "description": "NP Frontend",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "python -m SimpleHTTPServer 8080"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular-recaptcha": "^4.1.2",
+    "angularjs-captcha": "^1.3.0"
+  }
+}

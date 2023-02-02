@@ -1,0 +1,9 @@
+node_modules
+node_modules/**
+m/node_modules/**
+**/node_modules/**
+# .env
+**/.DS_Store
+# models/mysql.js
+# facultyFrontend/app/config.js
+# facultyFrontend/app/instructor_images
