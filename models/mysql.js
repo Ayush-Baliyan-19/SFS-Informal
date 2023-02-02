@@ -17,17 +17,17 @@ var con = mysql.createConnection({
   // database: "sdc",
   
   
-  // host: "mysql-88478-0.cloudclusters.net",
-  // port: 16306,
-  // user: "admin",
-  // password: "sDmGFBEz",
-  // database: "sdc",
-
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "ballu12",
+  host: "mysql-109107-0.cloudclusters.net",
+  port: 10254,
+  user: "admin",
+  password: "ViXnzqkj",
   database: "sdc",
+
+  // host: "localhost",
+  // port: 3306,
+  // user: "root",
+  // password: "ballu12",
+  // database: "sdc",
 
   // host: "localhost"`,
   // user: "root",	// your MySQL username
