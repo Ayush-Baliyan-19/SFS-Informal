@@ -2,8 +2,8 @@ faculty.controller("pvcAnalysisCtrl", function ($scope, $rootScope, $location, p
 
 	$scope.pvc = [];
 	$scope.viewElements = false;
-	$scope.selectedYear = '2021';
-	$scope.year = 'August 2021 - May 2022';
+	$scope.selectedYear = '2022';
+	$scope.year = 'August 2022 - May 2023';
 	$scope.selected = {};
 	$scope.progress = false;
 	$scope.searching = false;

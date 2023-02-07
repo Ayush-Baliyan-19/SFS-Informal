@@ -2,8 +2,8 @@ faculty.controller('studentDataCtrl', ['$http', '$scope', 'dataPortalService', '
 
 	$scope.disabled = false;
 	$scope.data = [];
-	$scope.selectedYear = '2021';
-	$scope.year = 'August 2021 - May 2022';
+	$scope.selectedYear = '2022';
+	$scope.year = 'August 2022 - May 2023';
 	$scope.file = "";
 	$scope.showSpinner = false;
 

@@ -3,8 +3,8 @@ faculty.controller("deanAnalysisCtrl", function($scope, $rootScope, $location, $
 	
 
 	$scope.dean = [];
-	$scope.selectedYear = '2021';
-	$scope.year = 'August 2021 - May 2022';
+	$scope.selectedYear = '2022';
+	$scope.year = 'August 2022 - May 2023';
 	$scope.searching = false;
 	$scope.searched = false;
 	$scope.disabled = true;
@@ -26,7 +26,8 @@ faculty.controller("deanAnalysisCtrl", function($scope, $rootScope, $location, $
 		'August 2018 - May 2019',
 		'August 2019 - May 2020',
 		'August 2020 - May 2021',
-		'August 2021 - May 2022'
+		'August 2021 - May 2022',
+		'August 2023 - May 2023'
 	];
 
 	$scope.analysis={
