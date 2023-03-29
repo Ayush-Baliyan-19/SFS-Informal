@@ -29,10 +29,16 @@ var con = mysql.createConnection({
   // password: "QAlg30io",
   // database: "sdc",
 
-  host: "mysql-115673-0.cloudclusters.net",
-  port: 13940,
+  // host: "mysql-115673-0.cloudclusters.net",
+  // port: 13940,
+  // user: "admin",
+  // password: "1mL65wB3",
+  // database: "sdc",
+
+  host: "mysql-118198-0.cloudclusters.net",
+  port: 17525,
   user: "admin",
-  password: "1mL65wB3",
+  password: "9FCIpCRU",
   database: "sdc",
 
   // host: "localhost",
