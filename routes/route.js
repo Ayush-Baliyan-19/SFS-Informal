@@ -13,7 +13,7 @@ var routes = {
     resetPassword: require("./views/resetPassword")
   }
 };
-
+  
 router.get("/", routes.views.index.index);
 router.post("/initials", routes.views.index.initials);
 router.post("/verify", routes.views.index.verify);
