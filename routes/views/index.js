@@ -91,9 +91,8 @@ module.exports = {
               var email=process.env.email.split('/');
               var pass=process.env.password.split('/');
               var mailNo=process.env.mailNo;         
-		console.log(email[mailNo]);
-		console.log(pass[mailNo]);
-                
+              console.log(email[mailNo]);
+              console.log(pass[mailNo]);
                nodemailer.createTestAccount((err, account) => {
                  var transporter = nodemailer.createTransport({
                    service:'gmail',
