@@ -2,6 +2,7 @@
 faculty.controller('newTeacherCtrl', ['$http', '$scope', 'teacherService', '$window', '$location', function ($http, $scope, teacherService, $window, $location) {
 	$scope.formActive = false;
 	$scope.fieldTouch = [false, false, false, false];
+	console.log($scope)
 	$scope.collegeList = [{
 		collegeName: "University School of Architecture and Planning",
 		collegeCode: "usap"
@@ -141,10 +142,13 @@ faculty.controller('newTeacherCtrl', ['$http', '$scope', 'teacherService', '$win
 		}
 
 		teacherService.addTeacher($scope.name, $scope.email, $scope.phone, $scope.designation, $scope.room_no, $scope.college, $scope.password, function (res) {
+			console.log(res)
 			if (res) {
+				window.localStorage.setItem('newUserDetails', JSON.stringify({instructor_id:res.instructor_id, school:res.school}));
+				document.getElementById("instructor_id_newTeacher").value = res.instructor_id;
+				document.getElementById("instructor_school_newTeacher").value = res.school;
+				localStorage.getItem("uploadedImage") && document.getElementById('newTeacherImageSubmitButton').click();
 				$window.alert(res.message);
-				location.reload();
-
 			} else {
 				$window.alert("An error occured. Please try again");
 				$location.path("/newTeacher");

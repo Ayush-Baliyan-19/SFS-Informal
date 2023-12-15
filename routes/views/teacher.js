@@ -200,8 +200,7 @@ module.exports = {
 				function(err,resp){
 					if(err){console.log(err);return;}
 					else if(resp){
-						console.log("Employee inserted");
-						res.status(200).json({'message':'New Teacher Inserted'});
+						res.status(200).json({'message':'New Teacher Inserted',instructor_id:instructor_id,school:school});
 					}
 				})
 		}) 
@@ -235,6 +234,50 @@ module.exports = {
                          }else{
                    cb("Error: File upload only supports the following filetypes - " + filetypes);
                     console.log("nvalidate");}
+             }, storage: storage }).single('photo');
+
+         upload(req, res, function (err) {
+            if(err) {
+              console.log(err);
+              var obj = { status: 400, message: "Image can't be uploaded" };
+                    res.json(obj);
+            }
+            else{
+            	
+             console.log("Image uploaded");
+             var obj = { status: 200, message: "Image uploaded successfully" };
+             res.json(obj);
+            }
+        })    
+    },
+
+   newTeacherUpload_photo: function(req, res) {
+	console.log("in upload section");
+	console.log(req.body)
+          var storage = multer.diskStorage({
+           destination: function (req, file, cb) {
+           	console.log("destination");
+          cb(null, './facultyFrontend/app/instructor_images/'+req.school+'/')
+          },
+          filename: function (req, file, cb) {
+          cb(null, req.instructor_id + '.jpg')
+         }
+       });
+
+        var upload = multer({ 
+					
+        	fileFilter: function (req, file, cb) {
+        		console.log("check");
+
+                  var filetypes = /jpeg|jpg/;
+                  var mimetype = filetypes.test(file.mimetype);
+                  var extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+
+                         if (mimetype && extname) {
+                             return cb(null, true);
+                         }else{
+                   cb("Error: File upload only supports the following filetypes - " + filetypes);
+                    console.log("Invalidate");}
              }, storage: storage }).single('photo');
 
          upload(req, res, function (err) {

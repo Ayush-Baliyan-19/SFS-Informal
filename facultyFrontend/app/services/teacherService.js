@@ -154,6 +154,7 @@ faculty.factory('teacherService', ['$http','$localStorage', '$timeout', '$rootSc
 				}
 			}).then(function(response) {
 				if (callback) {
+					console.log(response.data)
 					callback(response.data);
 				}
 			}, function(response) {

@@ -83,6 +83,21 @@
         <span  style="color:blue; display: block;font-size:12px;margin:10px;">Enter the same password again</span>
 
     </div>
+    <div class="col s4">
+        <center>
+            <img id="stud-img" class="student-main-image"  src="" style="height: 200px; width: 200px;">
+            <br><br>
+            <div style="margin-bottom: 0px !important;" class="row">
+               <form name="form" action="/tnewTeacherUploadPhoto" method="POST" onSubmit="alert('Image uploaded')" class="uploadImage" enctype="multipart/form-data">
+                    <input type="hidden" style="display: none;" id="instructor_id_newTeacher" name="instructor_id">
+                    <input type="hidden" style="display: none;" id="instructor_school_newTeacher"name="school">
+                    <input class="file-input" id="newTeacherImagefile" type='file' ng-model="photo" name="photo" value="file">
+                    <br><br>
+                    <button type="submit" class="btn btn-default" hidden="true" id="newTeacherImageSubmitButton" style="display:block;margin:0 auto;">Upload Photo</button>
+                </form>
+            </div>
+        </center>
+    </div>
     </div>   
 </div>
     <button ng-show="formActive" type="button" class="btn btn-default" ng-click="submit()" style="display:block;margin:0 auto;">Submit</button>
@@ -90,9 +105,6 @@
 <br>
 
 <style type="text/css">
-    #teacher_name{
-
-    }
     /* .btn__back{
         position: relative;
     } */
@@ -267,4 +279,20 @@
     $(document).ready(function () {
         $('select').material_select();
     })
+    function handleFileSelect() {
+        var input = document.getElementById('newTeacherImagefile');
+        var file = input.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var base64String = e.target.result;
+                localStorage.setItem('uploadedImage', base64String);
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+    document.getElementById('newTeacherImagefile').addEventListener('change', function () {
+        handleFileSelect();
+        // You can perform additional actions here, like submitting the form to the server.
+    });
 </script>
