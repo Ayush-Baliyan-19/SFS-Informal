@@ -144,7 +144,7 @@ faculty.controller('newTeacherCtrl', ['$http', '$scope', 'teacherService', '$win
 		teacherService.addTeacher($scope.name, $scope.email, $scope.phone, $scope.designation, $scope.room_no, $scope.college, $scope.password, function (res) {
 			console.log(res)
 			if (res) {
-				window.localStorage.setItem('newUserDetails', JSON.stringify({instructor_id:res.instructor_id, school:res.school}));
+				// window.localStorage.setItem('newUserDetails', JSON.stringify({instructor_id:res.instructor_id, school:res.school}));
 				document.getElementById("instructor_id_newTeacher").value = res.instructor_id;
 				document.getElementById("instructor_school_newTeacher").value = res.school;
 				localStorage.getItem("uploadedImage") && document.getElementById('newTeacherImageSubmitButton').click();

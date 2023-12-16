@@ -4,6 +4,7 @@ var con = require('../../models/mysql'),
 	controller = require('../../models/config'),
 	CryptoJS = require("crypto-js"),
 	multer=require('multer');
+	path=require('path');
 	
 module.exports = {
 	/**
@@ -253,19 +254,17 @@ module.exports = {
 
    newTeacherUpload_photo: function(req, res) {
 	console.log("in upload section");
-	console.log(req.body)
           var storage = multer.diskStorage({
            destination: function (req, file, cb) {
            	console.log("destination");
-          cb(null, './facultyFrontend/app/instructor_images/'+req.school+'/')
+          cb(null, './facultyFrontend/app/instructor_images/'+req.body.school+'/')
           },
           filename: function (req, file, cb) {
-          cb(null, req.instructor_id + '.jpg')
+          cb(null, req.body.instructor_id + '.jpg')
          }
        });
 
-        var upload = multer({ 
-					
+        var upload = multer({
         	fileFilter: function (req, file, cb) {
         		console.log("check");
 
