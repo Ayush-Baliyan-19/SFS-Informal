@@ -90,6 +90,7 @@ module.exports = {
         batchAllocatiomTable +
         " where course=? and stream=? and semester = ?"
     );
+    console.log(getBatch)
 
     con.query(getBatch,[course,stream,semester],function(err,batch){
       if(err){
@@ -109,9 +110,7 @@ module.exports = {
         }
         res.status(200).send(data);
       })
-      
     })
-
   },
 
   deleteRecordedSubject:function(req,res){

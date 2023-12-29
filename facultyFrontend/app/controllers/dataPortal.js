@@ -77,7 +77,7 @@ faculty.controller("dataPortalCtrl", [
       },
     ];
 
-    $scope.semesterList = [2, 4, 6, 8, 10, 12];
+    $scope.semesterList = [1, 3, 5, 7, 9, 11];
 
     $scope.courseList = [];
 

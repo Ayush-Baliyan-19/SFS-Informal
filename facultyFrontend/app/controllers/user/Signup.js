@@ -9,9 +9,9 @@ faculty.controller('SignupCtrl', ['$scope', '$http', '$rootScope', '$location', 
 
   // dropdown for semester acc to ODD_EVEN
   if (ODD_EVEN == 1) {
-    $scope.semesterList = [1, 3, 5, 7, 9];
+    $scope.semesterList = [1, 3, 5, 7, 9, 11];
   } else if (ODD_EVEN == 2) {
-    $scope.semesterList = [2, 4, 6, 8, 10];
+    $scope.semesterList = [1, 3, 5, 7, 9, 11];
   }
 
   $scope.collegeList = [

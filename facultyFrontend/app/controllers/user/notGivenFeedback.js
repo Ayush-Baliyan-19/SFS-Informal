@@ -70,7 +70,7 @@ faculty.controller('notGivenFeedbackCtrl', function ($scope, $location, userServ
 	if (ODD_EVEN == 1) {
 		$scope.semesterList = [1, 3, 5, 7, 9];
 	} else if (ODD_EVEN == 2) {
-		$scope.semesterList = [2, 4, 6, 8, 10];
+		$scope.semesterList = [1, 3, 5, 7, 9, 11];
 	}
 
 	$scope.listOfStudents = [];
